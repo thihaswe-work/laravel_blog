@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::get('/users', function (Request $request) {
+//     $data = ['name' => "mgmg"];
+//     return "hello world $data[name]";
+// });
+Route::apiResource('/categories', CategoryApiController::class);
