@@ -15,15 +15,8 @@ class ArticleController extends Controller
       $this->middleware('auth')->except(['index', 'detail']);
    }
 
-
    public function index()
    {
-      //  $data = [
-      //  [ "id" => 1, "title" => "First Article" ],
-      //  [ "id" => 2, "title" => "Second Article" ],
-      //  ];
-
-
       // $data = Article::all();
       $data = Article::latest()->paginate(5);
       return view('articles.index', [
@@ -33,7 +26,6 @@ class ArticleController extends Controller
 
    public function detail($id)
    {
-
       $data = Article::find($id);
       return view('articles.detail', [
          'article' => $data

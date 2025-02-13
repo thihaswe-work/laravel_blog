@@ -43,6 +43,26 @@ Route::get('/articles/delete/{id}', [
 
 Route::get('/products', [ProductController::class, 'index']);
 
+// Route::group(['prefix' => 'users'], function () {
+//     Route::get('/ids', function () {
+//         return "User IDs List";
+//     })->name('ids');
+// });
+
+// Route::group(['as' => 'users.'], function () {
+//     Route::get('/ids', function () {
+//         return "User IDs List";
+//     })->name('ids');
+// });
+
+
+Route::group([], function () {
+    Route::get('/ids', function () {
+        return "User IDs List";
+    })->name('ids');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

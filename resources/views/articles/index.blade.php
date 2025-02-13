@@ -39,5 +39,10 @@
         </div>
     </div>
     @endforeach
+
+    <a href="{{ route('ids') }}">
+        <div>Goto</div>
+    </a>
+
 </div>
 @endsection
